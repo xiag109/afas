@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="content">
+        <img src="images/words.gif" class="words" />
+      </div>
+    </section>
+    <form>
+      <h1 class="pi">Payment Information</h1>
+      <div class="balls">
+        <span>
+          <label for="firstname">First Name*</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="John"
+          />
+        </span>
+        <span>
+          <label for="lastname">Last Name*</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Doe" />
+        </span>
+        <div>
+          <span>
+            <label for="st">Address*</label>
+            <input type="text" name="st" id="st" placeholder="Street address" />
+          </span>
+        </div>
+        <div>
+          <span>
+            <label for="cardnum">Cardnumber*</label>
+            <input
+              type="text"
+              name="cardnum"
+              id="cardnum"
+              placeholder="0000 0000 0000 0000"
+            />
+            <div class="cvv">
+              <label for="cvv">CVV*</label>
+              <input type="text" name="cvv" id="cvv" placeholder="123" />
+            </div>
+            <div class="select">
+              <label for="exp">Expiration Date*</label>
+              <select name="expm" id="expm">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <span class="arrow"></span>
+              <select name="expy" id="expy">
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                .pi { margin-top: 0; background-color: #466793; padding: 3px;
+                color: white; text-align: center; } #huh { box-sizing:
+                border-box; background-color: #466793; border-radius: 50%;
+                color: white; top: -40px; left: 20%; width: 25px; height: 25px;
+                font-size: 23px; font-weight: bold; font-family: sans-serif;
+                text-align: center; position: relative; display: inline-block;
+                cursor: pointer; box-shadow: 1px 1px 0px gray; } #tooltip {
+                position: absolute; padding: .5rem; color: white;
+                background-color: gray; width: max-content; max-width: 15%;
+                text-align: center; left: 30%; top: 790px; opacity: 0;
+                transition: 150ms opacity; font-size: 15px; } #tooltip::before {
+                content: ""; position: absolute; left: -5%; top: 25%; transform:
+                translatex(-50%); border: 15px solid; border-color: #0000 gray
+                #0000 #0000; } #t:hover #tooltip { opacity: 1; } .popup { width:
+                400px; height: 400px; background-color: white; position:
+                absolute; top: 0%; left: 50%; transform: translate(-50%, -50%)
+                scale(0.1); padding: 0 30px 30px; color: black; text-align:
+                center; visibility: hidden; } .popup img { width: 200px;
+                align-items: center; } .popup h2 { margin-top: 15%; }
+                .open-popup { visibility: visible; top: 50%; transform:
+                translate(-50%,-50%) } #firstname { border-radius: 0;
+                box-shadow: -5, -5, 0; margin: 10px; padding: 5px;
+                margin-bottom: 30px; } #lastname { border-radius: 0; box-shadow:
+                -5, -5, 0; margin: 10px; padding: 5px; margin-bottom: 30px; }
+                #st { border-radius: 0; box-shadow: -5, -5, 0; margin: 10px;
+                padding: 5px; margin-bottom: 30px; } #cardnum { border-radius:
+                0; box-shadow: -5, -5, 0; margin: 10px; padding: 5px;
+                margin-bottom: 30px; } #cvv { border-radius: 0; box-shadow: -5,
+                -5, 0; margin: 10px; padding: 5px; margin-bottom: 10px; } #expm
+                { width: 75px; background-color: white; border-radius: 2px;
+                box-shadow: -5, -5, 0; margin: 10px; padding: 5px;
+                margin-bottom: 30px; } #expy { width: 75px; background-color:
+                white; box-shadow: -5, -5, 0; margin: 10px; padding: 5px;
+                margin-bottom: 30px; } .btn { inset-inline: block; margin-left:
+                10px; width: auto; padding: 5px; font-size: 20px; border-radius:
+                0; font-family: 'Times New Roman', Times, serif; background:
+                rgb(172, 172, 172); margin-bottom: 15px; }
+              </select>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn" onclick="openPopup()">
+          Continue
+        </button>
+        <div class="popup" id="popup">
+          <h2>thank you for selling your soul!</h2>
+          <img src="images/smile.gif" />
+          <p>if you didnt recieve your smile, try again.</p>
+          <button type="submit">Try Again</button>
+        </div>
+
+        <script>
+          let popup = document.getElementById("popup");
+
+          function openPopup() {
+            popup.classList.add("open-popup");
+          }
+        </script>
+      </div>
+    </form>
+
+    <div id="set-height"></div>
+
+    <video id="v0" tabindex="0" , autobuffer preload>
+      <source type="video/mp4" src="images/vid.mp4" />
+    </video>
+
+    <script>
+      var frameNumber = 0,
+        playbackConst = 400,
+        setHeight = document.getElementById("set-height"),
+        // select video element
+        vid = document.getElementById("v0");
+      // var vid = $('#v0')[0]; // jquery option
+
+      // dynamically set the page height according to video length
+      vid.addEventListener("loadedmetadata", function () {
+        setHeight.style.height =
+          Math.floor(vid.duration) * playbackConst + "px";
+      });
+
+      // Use requestAnimationFrame for smooth playback
+      function scrollPlay() {
+        var frameNumber = window.pageYOffset / playbackConst;
+        vid.currentTime = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
+      }
+
+      window.requestAnimationFrame(scrollPlay);
+    </script>
+  </body>
+</html>
